@@ -15,24 +15,45 @@ struct Person {
     var email: String
     var phone: String
     
-    static func getPersons() -> Person {
+    static func getPersons() -> [Person] {
         
-        let name = DataManager.shared.names.randomElement()
-        let surname = DataManager.shared.surnames.randomElement()
-        let email = DataManager.shared.emails.randomElement()
-        let phone = DataManager.shared.phones.randomElement()
+        let name = DataManager.shared.names.shuffled()
+        let surname = DataManager.shared.surnames.shuffled()
+        let email = DataManager.shared.emails.shuffled()
+        let phone = DataManager.shared.phones.shuffled()
     
-        let person = Person(name: name ?? "no", surname: surname ?? "no", email: email ?? "no", phone: phone ?? "no")
+        var persons: [Person] = []
+        
+        let indexCount = min(
+            name.count,
+            surname.count,
+            email.count,
+            phone.count
+            )
+        
+        for index in 0..<indexCount {
+            
+            let person = Person(
+                name: name[index],
+                surname: surname[index],
+                email: email[index],
+                phone: phone[index]
+            )
+            
+            persons.append(person)
+        }
     
         
-        return person
+        return persons
     
     }
     
 }
 
 
-    
+
+
+
    
     
 
