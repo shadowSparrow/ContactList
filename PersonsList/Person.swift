@@ -14,6 +14,9 @@ struct Person {
     var surname: String
     var email: String
     var phone: String
+    var fullName: String {
+        "\(name) \(surname)"
+    }
     
     static func getPersons() -> [Person] {
         
@@ -38,6 +41,8 @@ struct Person {
                 surname: surname[index],
                 email: email[index],
                 phone: phone[index]
+                
+                
             )
             
             persons.append(person)
