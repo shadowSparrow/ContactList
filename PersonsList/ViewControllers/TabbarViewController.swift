@@ -16,7 +16,7 @@ class TabbarViewController: UITabBarController {
         super.viewDidLoad()
 
         setupViewControllers()
-        // Do any additional setup after loading the view.
+        
     }
     
     private func setupViewControllers() {
