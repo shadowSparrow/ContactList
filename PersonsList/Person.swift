@@ -10,7 +10,7 @@ import Foundation
 
 struct Person {
     
-    var name: String
+var name: String
     var surname: String
     var email: String
     var phone: String
